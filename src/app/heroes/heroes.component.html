@@ -1,4 +1,4 @@
-<h2>My Heroes</h2>
+<h2 i18n="title|header of heroes list">My Heroes</h2>
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
@@ -6,18 +6,22 @@
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
 
-    <button type="button" class="delete" title="delete hero"
+    <button type="button" class="delete" i18n.title="button" title="delete hero"
       (click)="delete(hero)">x</button>
 
   </li>
 </ul>
 
 <div>
-  <label for="new-hero">Hero name: </label>
+  <label for="new-hero" i18n="label|add hero form field">Hero name: </label>
   <input id="new-hero" #heroName />
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+  <button 
+    type="button"
+    class="add-button"
+    (click)="add(heroName.value); heroName.value=''"
+    i18n="button">
     Add hero
   </button>
 

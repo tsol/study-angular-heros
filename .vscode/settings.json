@@ -1,0 +1,7 @@
+{
+  "xliffSync.baseFile": "messages.xlf",
+  "files.associations": {
+    ".xtm": "xml",
+    ".ngI18nconfig": "json"
+  }
+}

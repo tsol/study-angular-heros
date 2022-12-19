@@ -1,10 +1,14 @@
 <div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div>id: {{hero.id}}</div>
+  <h2>{{hero.name | uppercase}} 
+    <ng-component i18n="title|goes right after heros name">
+      Details
+    </ng-component>
+  </h2>
+  <div i18n="field|hero id in edit form">id: {{hero.id}}</div>
   <div>
-    <label for="hero-name">Hero name: </label>
+    <label for="hero-name" i18n="">Hero name: </label>
     <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
   </div>
 </div>
-<button type="button" (click)="save()">save</button>
-<button type="button" (click)="goBack()">go back</button>
+<button type="button" (click)="save()" i18n="save as in save changes">save</button>
+<button type="button" (click)="goBack()" i18n="navigation button">go back</button>

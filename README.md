@@ -1,27 +1,16 @@
 # AngularHeroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This is a standart Tour of Heroes Tutorial example with added i18n and ELF state manager.
 
-## Development server
+# i18n
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Since native i18n approach is used in this application - there is no standart
+way to switch languages and locales at runtime. In standart angular way you must build
+application for each language to /lang/ folder on the server and then staticly route
+users to these folders.
 
-## Code scaffolding
+To test out both English and Russian languages in this project - change
+angular.json file in the root folder. Under 'build' section remove
+"localize": ["ru"] line to run application in default language (which is english).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# elf manager

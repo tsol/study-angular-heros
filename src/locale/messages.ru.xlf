@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" target-language="ru-RU" datatype="plaintext" original="ng2.template">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="ru">
     <body>
       <trans-unit id="6570363013146073520" datatype="html">
         <source>Dashboard</source>
@@ -33,18 +33,19 @@
         <source>Top Heroes</source>
         <target state="translated">Топ Героев</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="sourcefile">src/app/components/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">dashboard title</note>
         <note priority="1" from="meaning">title</note>
       </trans-unit>
       <trans-unit id="8971618476069276832" datatype="html">
-        <source>Details</source>
+        <source> Details </source>
         <target state="needs-adaptation">Детали</target>
+        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="sourcefile">src/app/components/hero-detail/hero-detail.component.html</context>
+          <context context-type="linenumber">3,5</context>
         </context-group>
         <note priority="1" from="description">goes right after heros name</note>
         <note priority="1" from="meaning">title</note>
@@ -53,17 +54,18 @@
         <source>id: <x id="INTERPOLATION" equiv-text="{{hero.id}}"/></source>
         <target state="translated">айди:<x id="INTERPOLATION" equiv-text="{{hero.id}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="sourcefile">src/app/components/hero-detail/hero-detail.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">hero id in edit form</note>
         <note priority="1" from="meaning">field</note>
       </trans-unit>
       <trans-unit id="7052135295634646592" datatype="html">
-        <source>Hero name:</source>
-        <target state="translated">Имя героя:</target>
+        <source>Hero name: </source>
+        <target state="needs-adaptation">Имя героя:</target>
+        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="sourcefile">src/app/components/hero-detail/hero-detail.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
@@ -71,7 +73,7 @@
         <source>save</source>
         <target state="translated">сохранить</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="sourcefile">src/app/components/hero-detail/hero-detail.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">save as in save changes</note>
@@ -80,7 +82,7 @@
         <source>go back</source>
         <target state="translated">назад</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="sourcefile">src/app/components/hero-detail/hero-detail.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">navigation button</note>
@@ -89,94 +91,40 @@
         <source>Hero Search</source>
         <target state="translated">Поиск Героя</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero-search/hero-search.component.html</context>
+          <context context-type="sourcefile">src/app/components/hero-search/hero-search.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
         <note priority="1" from="description">header of search box</note>
         <note priority="1" from="meaning">title</note>
       </trans-unit>
-      <trans-unit id="5309575397955022501" datatype="html">
-        <source>fetched heroes</source>
-        <target state="translated">скачены герои</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">40</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2791281180574624585" datatype="html">
-        <source>get hero id=<x id="heroId" equiv-text="id"/></source>
-        <target state="translated">получен герой id=<x id="heroId" equiv-text="id"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">49</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5070159119653849423" datatype="html">
-        <source>updated hero id=<x id="heroId" equiv-text="hero.id"/></source>
-        <target state="translated">обновлён герой id=<x id="heroId" equiv-text="hero.id"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">57</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4735947719189269857" datatype="html">
-        <source>added hero id=<x id="heroId" equiv-text="newHero.id"/></source>
-        <target state="translated">добавлен герой id=<x id="heroId" equiv-text="newHero.id"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3262294831921491917" datatype="html">
-        <source>deleted hero id=<x id="heroId" equiv-text="id"/></source>
-        <target state="translated">удалён герой id=<x id="heroId" equiv-text="id"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">75</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4324636371813049607" datatype="html">
-        <source>found heroes matching &quot;<x id="searchTerm" equiv-text="term"/>&quot;</source>
-        <target state="translated">найдены герои по запросу "<x id="searchTerm" equiv-text="term"/>"</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">89</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5476665891720356290" datatype="html">
-        <source>no heroes matching &quot;<x id="searchTerm" equiv-text="term"/>&quot;</source>
-        <target state="translated">герои не найдены по запросу "<x id="searchTerm" equiv-text="term"/>"</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/hero.service.ts</context>
-          <context context-type="linenumber">90</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="3128897303934395868" datatype="html">
         <source>My Heroes</source>
         <target state="translated">Мои Герои</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/heroes/heroes.component.html</context>
+          <context context-type="sourcefile">src/app/components/heroes/heroes.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">header of heroes list</note>
         <note priority="1" from="meaning">title</note>
       </trans-unit>
       <trans-unit id="4573201082410856610" datatype="html">
-        <source>Hero name:</source>
-        <target state="translated">Имя героя:</target>
+        <source>Hero name: </source>
+        <target state="needs-adaptation">Имя героя:</target>
+        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/heroes/heroes.component.html</context>
+          <context context-type="sourcefile">src/app/components/heroes/heroes.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">add hero form field</note>
         <note priority="1" from="meaning">label</note>
       </trans-unit>
       <trans-unit id="6991283144193540229" datatype="html">
-        <source>Add hero</source>
-        <target state="translated">Добавить героя</target>
+        <source> Add hero </source>
+        <target state="needs-adaptation">Добавить героя</target>
+        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/heroes/heroes.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="sourcefile">src/app/components/heroes/heroes.component.html</context>
+          <context context-type="linenumber">24,26</context>
         </context-group>
         <note priority="1" from="description">button</note>
       </trans-unit>
@@ -184,7 +132,7 @@
         <source>Messages</source>
         <target state="translated">Сообщения</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/messages/messages.component.html</context>
+          <context context-type="sourcefile">src/app/components/messages/messages.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
         <note priority="1" from="description">messages header</note>
@@ -194,10 +142,66 @@
         <source>Clear messages</source>
         <target state="translated">Очистить сообщения</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/messages/messages.component.html</context>
+          <context context-type="sourcefile">src/app/components/messages/messages.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">button</note>
+      </trans-unit>
+      <trans-unit id="5309575397955022501" datatype="html">
+        <source>fetched heroes</source>
+        <target state="translated">скачены герои</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2791281180574624585" datatype="html">
+        <source>get hero id=<x id="heroId" equiv-text="id"/></source>
+        <target state="translated">получен герой id=<x id="heroId" equiv-text="id"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5070159119653849423" datatype="html">
+        <source>updated hero id=<x id="heroId" equiv-text="hero.id"/></source>
+        <target state="translated">обновлён герой id=<x id="heroId" equiv-text="hero.id"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4735947719189269857" datatype="html">
+        <source>added hero id=<x id="heroId" equiv-text="newHero.id"/></source>
+        <target state="translated">добавлен герой id=<x id="heroId" equiv-text="newHero.id"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3262294831921491917" datatype="html">
+        <source>deleted hero id=<x id="heroId" equiv-text="id"/></source>
+        <target state="translated">удалён герой id=<x id="heroId" equiv-text="id"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4324636371813049607" datatype="html">
+        <source>found heroes matching "<x id="searchTerm" equiv-text="term"/>"</source>
+        <target state="translated">найдены герои по запросу "<x id="searchTerm" equiv-text="term"/>"</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5476665891720356290" datatype="html">
+        <source>no heroes matching "<x id="searchTerm" equiv-text="term"/>"</source>
+        <target state="translated">герои не найдены по запросу "<x id="searchTerm" equiv-text="term"/>"</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/hero.service.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

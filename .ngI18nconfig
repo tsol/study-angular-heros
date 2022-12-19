@@ -1,5 +1,5 @@
 {
-  "locales": ["en-US", "ru-RU"],
+  "locales": ["en", "ru"],
 
     "editor": {
       "messageLocations": ["src/locale/messages.xlf"],

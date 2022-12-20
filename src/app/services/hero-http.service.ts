@@ -10,7 +10,7 @@ import '@angular/localize'
 @Injectable({
   providedIn: 'root'
 })
-export class HeroService {
+export class HeroHttpService {
   
   private heroesUrl = 'api/heroes';  // URL to web api
   
@@ -23,7 +23,7 @@ export class HeroService {
     private messageService: MessageService) { }
 
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`HeroHttpService: ${message}`);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

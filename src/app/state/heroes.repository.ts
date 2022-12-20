@@ -1,62 +1,78 @@
 import { Injectable } from '@angular/core';
-import { switchMap } from 'rxjs/operators';
-import { select, withProps, createStore, setProp } from '@ngneat/elf';
+import { createStore, withProps, select, setProp } from '@ngneat/elf';
 import {
   addEntities,
   selectAllEntities,
   selectAllEntitiesApply,
   updateEntities,
+  deleteEntities,
   withEntities,
+  setEntities,
+  getEntitiesCount,
+  getEntity
 } from '@ngneat/elf-entities';
+import { Observable, switchMap } from 'rxjs';
 
-interface Todo {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import { Hero } from '../types/hero';
 
-export interface TodosProps {
-  filter: 'ALL' | 'ACTIVE' | 'COMPLETED';
+interface Filter {
+  searchTerm: string | undefined;
 }
 
 const store = createStore(
-  { name: 'todos' },
-  withProps<TodosProps>({ filter: 'ALL' }),
-  withEntities<Todo>()
+  { name: 'heroes' },
+  withProps<Filter>({ searchTerm: undefined }),
+  withEntities<Hero>()
 );
 
 @Injectable({ providedIn: 'root' })
-export class TodosRepository {
-  todos$ = store.pipe(selectAllEntities());
-  filter$ = store.pipe(select((state) => state.filter));
+export class HeroesRepository {
+  
+  heroes$ = store.pipe(selectAllEntities());
+  searchTerms$ = store.pipe(select((state) => state.searchTerm));
 
-  visibleTodos$ = this.filter$.pipe(
-    switchMap((filter) => {
+  filteredHeroes$ = this.searchTerms$.pipe(
+    switchMap((term) => {
       return store.pipe(
         selectAllEntitiesApply({
-          filterEntity({ completed }) {
-            if (filter === 'ALL') return true;
-            return filter === 'COMPLETED' ? completed : !completed;
+          filterEntity({ name }) {
+            return ( ! term ? false : name.toUpperCase().includes(term));
           },
         })
       );
     })
   );
 
-  addTodo(title: Todo['title']) {
-    store.update(addEntities({ id: Math.random(), title, completed: false }));
+  setSearchTerm(term: Filter['searchTerm']) {
+    store.update(setProp('searchTerm', term?.toUpperCase()));
   }
 
-  updateFilter(filter: TodosProps['filter']) {
-    store.update(setProp('filter', filter));
+  getHeroesCount(): number {
+    return store.query(getEntitiesCount());
   }
 
-  updateCompleted(id: Todo['id']) {
+  getHero(id: number): Hero | undefined {
+    return store.query(getEntity(id));
+  }
+
+  setHeroes(heroes: Hero[]): void {
+    store.update(setEntities(heroes));
+  }
+
+  addHero(hero: Hero): void {
+    store.update(addEntities(hero));
+  }
+
+  deleteHero(id: Hero['id']): void {
+    store.update(deleteEntities([id]));
+  }
+
+  updateHero(hero: Hero): void {
     store.update(
-      updateEntities(id, (entity) => ({
-        ...entity,
-        completed: !entity.completed,
-      }))
+      updateEntities(hero.id, (entity) => hero)
     );
   }
+
+
+
 }

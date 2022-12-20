@@ -4,7 +4,8 @@ import { Hero } from '../../types/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService } from '../../services/hero.service';
+import { HeroHttpService } from '../../services/hero-http.service';
+import { HeroesRepository } from '../../state/heroes.repository';
 
 @Component({
   selector: 'app-hero-detail',
@@ -14,7 +15,8 @@ import { HeroService } from '../../services/hero.service';
 export class HeroDetailComponent {
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private heroHttpService: HeroHttpService,
+    private state: HeroesRepository,
     private location: Location
   ) {}
 
@@ -26,14 +28,18 @@ export class HeroDetailComponent {
   
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.hero = this.state.getHero(id);
   }
 
   save(): void {
+    this.state.setSearchTerm(undefined);
     if (this.hero) {
-      this.heroService.updateHero(this.hero)
-        .subscribe(() => this.goBack());
+      this.heroHttpService.updateHero(this.hero)
+        .subscribe(() => {
+          if (this.hero)
+            this.state.updateHero(this.hero);
+          this.goBack()
+        });
     }
   }
 

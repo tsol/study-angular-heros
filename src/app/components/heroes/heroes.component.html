@@ -1,7 +1,7 @@
 <h2 i18n="title|header of heroes list">My Heroes</h2>
 
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of state.heroes$ | async">
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>

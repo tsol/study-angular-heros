@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero } from '../../types/hero';
-import { HeroService } from '../../services/hero.service';
-import { MessageService } from '../../services/message.service';
+import { HeroesRepository } from '../../state/heroes.repository';
 
 @Component({
   selector: 'app-heroes',
@@ -10,16 +8,6 @@ import { MessageService } from '../../services/message.service';
 })
 export class DashboardComponent {
 
-  heroes: Hero[] = [];
+  constructor(public state: HeroesRepository) {}
 
-  constructor(private heroService: HeroService, private messageService: MessageService) {}
-
-  getHeroes(): void {
-    this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
-  }
-
-  ngOnInit(): void {
-    this.getHeroes();
-  }
 }
